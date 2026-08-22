@@ -66,3 +66,12 @@ Invariants:
 - The task request may include source identity, related Conference/CFP/Submission/Booking identity, actionable description, suggested due date, and an idempotency key.
 - Task Management owns task identity, assignment, status, scheduling, and completion state.
 - TalkCircuit does not import or become the owner of the Task Management model.
+
+## Term: Calendaring Integration
+Definition: An outbound integration through which TalkCircuit updates an external calendar for the Speaker's conference activity.
+Invariants:
+- TalkCircuit may create or update a calendar entry when a Submission is created.
+- TalkCircuit may update that entry when the Submission outcome is Accepted or Rejected.
+- Calendar entries may include Conference, CFP, and Submission identity, title, relevant dates, outcome, and an idempotency key.
+- Calendaring owns calendar-entry identity, scheduling details, recurrence, reminders, and calendar-entry status.
+- A calendar entry is a projection of TalkCircuit state, not the authoritative Submission or Booking record.

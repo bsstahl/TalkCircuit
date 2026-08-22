@@ -31,9 +31,13 @@ Create or update a Submission with the CFP reference, TalkFolio Talk reference, 
 
 The Submission status becomes `Submitted` only after the proposal has actually been sent to the conference system.
 
+After the Submission is created, TalkCircuit may send an update to Calendaring for the Speaker's conference activity. The calendar update should reference the Conference, CFP, and Submission and use an idempotency key when available.
+
 ## 5. Record the Outcome
 
 Record `Accepted`, `Rejected`, or `Withdrawn` with the relevant date and notes. Do not mutate the submitted proposal snapshot when TalkFolio's current copy changes.
+
+When the outcome is `Accepted` or `Rejected`, TalkCircuit may update the corresponding Calendaring entry with the outcome and any known next action. A `Withdrawn` outcome does not use the acceptance/rejection update path and requires an explicitly defined local calendar policy.
 
 An acceptance may create a follow-up task in Task Management asking the Speaker to review the presentations assigned to the conference.
 

@@ -12,6 +12,7 @@ No context imports another context's internal model.
 | TalkCircuit -> LiquidVictor | `SlideDeck.Id` | Identify the deck assigned to an accepted Booking |
 | TalkCircuit -> SlideFed | URL or session identifier | Link a delivered or published session |
 | TalkCircuit -> Task Management | Task intent and source reference | Request follow-up work for the Speaker |
+| TalkCircuit -> Calendaring | Submission and outcome event | Update the Speaker's conference-related calendar |
 
 TalkFolio remains the owner of Talk identity, proposal copy, category, tags, target audience, PresentationFamily membership, and concept lifecycle. TalkCircuit consumes those values when planning or validating submissions.
 
@@ -50,6 +51,15 @@ The task payload should carry enough context to act without importing Task Manag
 - deduplication key or idempotency key.
 
 Task Management owns task identity, assignment, status, scheduling, and completion. TalkCircuit should not duplicate those fields as authoritative state.
+
+## Calendaring Integration
+
+TalkCircuit may publish calendar updates to the external `Calendaring` domain at two points:
+
+- when a Submission is created, to record the conference opportunity or submission-related calendar item;
+- when the Submission outcome is recorded as `Accepted` or `Rejected`, to update the calendar item with the outcome and any known next action.
+
+The update should include the source identity, Conference/CFP/Submission identity, title, relevant dates, outcome, and an idempotency key when available. Calendaring owns calendar-entry identity, scheduling details, recurrence, reminders, and calendar-entry status. TalkCircuit must not treat a copied calendar entry as authoritative Submission or Booking state.
 
 ## Recommendation Flow
 
