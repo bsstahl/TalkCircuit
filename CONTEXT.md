@@ -58,3 +58,11 @@ Definition: A candidate set of Talks to submit to a CFP, based on TalkFolio meta
 Invariants:
 - Recommendation logic belongs to TalkCircuit.
 - Recommendations should eventually be structured queries/rules over TalkFolio and TalkCircuit data, not prompt-only summaries over markdown.
+
+## Term: Task Management Integration
+Definition: An outbound integration through which TalkCircuit requests follow-up work from an external Task Management domain.
+Invariants:
+- TalkCircuit may create a task when a conference event changes the work needed from the Speaker, such as an acceptance requiring presentation review.
+- The task request may include source identity, related Conference/CFP/Submission/Booking identity, actionable description, suggested due date, and an idempotency key.
+- Task Management owns task identity, assignment, status, scheduling, and completion state.
+- TalkCircuit does not import or become the owner of the Task Management model.

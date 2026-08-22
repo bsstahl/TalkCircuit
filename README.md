@@ -19,6 +19,13 @@ TalkCircuit owns:
 
 TalkCircuit does not own talk catalog copy, deck construction, or Fediverse publication mechanics.
 
+## Domain Documentation
+
+- [Domain Model](docs/Domain-Model.md) — entities, references, lifecycles, invariants, and ownership boundaries.
+- [Conference and CFP Model](docs/Conference-Cfp-Model.md) — event opportunities, constraints, tags, provenance, and CfpPrep schema prior art.
+- [Submission Workflow](docs/Submission-Workflow.md) — discovery, preparation, validation, submission, booking, and delivery.
+- [Integration Strategy](docs/Integration-Strategy.md) — cross-context references, snapshots, outbound tasks, and reporting.
+
 ## SpeakerOps Integrations
 
 | Context | Relationship |
@@ -35,4 +42,4 @@ See [docs/CfpPrep-Salvage.md](docs/CfpPrep-Salvage.md).
 
 ## Status
 
-Documentation-first repository. Domain model and schemas are not yet implemented.
+Documentation-first repository. The domain model and integration contracts are documented; implementation schemas and workflows remain future work.
