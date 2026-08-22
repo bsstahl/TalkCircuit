@@ -4,6 +4,10 @@ TalkCircuit is the SpeakerOps bounded context for managing conference CFPs, subm
 
 It owns the movement of talks through the conference circuit: finding CFPs, understanding conference constraints, deciding what to submit, recording submissions, tracking acceptance/rejection, and connecting accepted bookings to built decks and published materials.
 
+## Code of Conduct
+
+All contributors and users are expected to follow the [Strict Accountability Policy](CODE_OF_CONDUCT.md).
+
 ## Responsibilities
 
 TalkCircuit owns:
