@@ -1,6 +1,6 @@
 # TalkCircuit
 
-TalkCircuit is the SpeakerOps bounded context for managing conference CFPs, submissions, bookings, and delivery history.
+TalkCircuit is the independent product for managing conference CFPs, submissions, bookings, and delivery history.
 
 It owns the movement of talks through the conference circuit: finding CFPs, understanding conference constraints, deciding what to submit, recording submissions, tracking acceptance/rejection, and connecting accepted bookings to built decks and published materials.
 
@@ -33,7 +33,7 @@ TalkCircuit does not own talk catalog copy, deck construction, or Fediverse publ
 
 ## SpeakerOps Integrations
 
-| Context | Relationship |
+| Product | Relationship |
 |---|---|
 | TalkFolio | TalkCircuit references TalkFolio talks, tags, categories, proposal copy, and PresentationFamily data when preparing or validating submissions. |
 | LiquidVictor | TalkCircuit references LiquidVictor `SlideDeck.Id` values once an accepted booking is tied to a specific built deck. |

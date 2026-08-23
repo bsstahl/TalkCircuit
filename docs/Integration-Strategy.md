@@ -1,10 +1,10 @@
 # TalkCircuit Integration Strategy
 
-TalkCircuit coordinates the conference-facing workflow for SpeakerOps. It owns submission workflow state and conference-circuit decisions while referring to other contexts by stable identity and snapshots.
+TalkCircuit coordinates the conference-facing workflow for SpeakerOps. It owns submission workflow state and conference-circuit decisions while referring to other products by stable identity and snapshots.
 
 ## Reference Rules
 
-No context imports another context's internal model.
+No product imports another product's internal model.
 
 | Direction | Reference | Purpose |
 |---|---|---|
@@ -74,4 +74,4 @@ Structured facts and rules should drive recommendations. LLM or other probabilis
 
 ## Reporting
 
-A reporting or composition tool may read TalkCircuit together with TalkFolio, LiquidVictor, and SlideFed to produce portfolio views or conference planning reports. That tool is not a reason to merge the bounded contexts.
+A reporting or composition tool may read TalkCircuit together with TalkFolio, LiquidVictor, and SlideFed to produce portfolio views or conference planning reports. That tool is not a reason to merge the independent products.

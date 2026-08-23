@@ -1,6 +1,6 @@
 # CfpPrep Salvage Notes
 
-`C:\s\r\CfpPrep` is existing prior work for the TalkCircuit bounded context. It should be treated as a prototype and source of reusable concepts, not copied blindly.
+`C:\s\r\CfpPrep` is existing prior work for the TalkCircuit product. It should be treated as a prototype and source of reusable concepts, not copied blindly.
 
 ## Bring Forward
 
