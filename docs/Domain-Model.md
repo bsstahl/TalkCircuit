@@ -59,17 +59,27 @@ TalkCircuit owns the Submission snapshot and its decisions. It does not write ba
 
 ### Submission
 
-`Draft` -> `Submitted` -> `Accepted`
+The current TalkCircuit database model does not use a distinct `Draft` state or a `Rejected` state. In practice, submissions move through the schema's active lifecycle as:
 
-`Submitted` -> `Rejected`
+`Submitted` -> `Pending` -> `Accepted`
 
-`Submitted` -> `Withdrawn`
+`Submitted` -> `Pending` -> `NotAccepted`
 
-A rejected or withdrawn Submission is terminal unless a new submission is created for a later CFP. An accepted Submission may produce one Booking.
+`Submitted` -> `Pending` -> `NoResponse`
+
+`Submitted` -> `Pending` -> `Withdrawn`
+
+`Accepted` -> `Delivered`
+
+`Pending` means the conference has not yet made or communicated a decision. When the conference window closes without a formal outcome, the record is moved to `NoResponse`. `NotAccepted` reflects a definitive rejection communicated by the conference. `Withdrawn` means the speaker withdrew the proposal. `Delivered` is the post-acceptance historical state after the talk was presented.
+
+A `NotAccepted`, `NoResponse`, or `Withdrawn` submission is terminal unless a new submission is created for a later CFP. An accepted Submission may produce one Booking.
+
+A soft-decline ambiguity like the Build Stuff Vilnius 2026 case is kept as `Pending` and documented in the ADR rather than reclassified as `NotAccepted` or `NoResponse` without a formal decision.
 
 ### Booking
 
-The minimum conceptual progression is:
+The current understanding of Booking is a follow-on concept for an accepted submission rather than a separate state machine in the submission schema. The minimal progression remains:
 
 `Accepted Submission` -> `Scheduled` -> `Delivered`
 
